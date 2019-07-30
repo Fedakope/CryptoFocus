@@ -50,8 +50,8 @@
 		<div class="title"><h1>Mon Portefeuille 1</h1></div>
 		<div class="subtitle"><h2>Ajouter une cryptomonnaie sur [exchange_name]</h2></div>
 
-		
-		
+			<div id="pathtestbox"></div>
+			<button type="button" onclick="PathName()">Test pathname</button>
 
 		<div class="coincheckboxes">
 			<p>Choisissez une crypto</p>
@@ -88,9 +88,10 @@
 			<h2>Quelle quantité de [crypto_name] avez-vous sur [exchange_name] ?</h2>
 			<input type="number" id="quantity"> <!-- <button type="button" onclick="AddQuantity()" class="btn btn-primary">Test !</button> -->
 		</div>
+	
+		<button onclick="LoadAsset() + ToAsset()" class="btn btn-primary btn-lg" type="button">GET DATAS </button>
 
-
-		<button type="button" onclick="CreerAsset() + SaveAsset()" class="btn btn-primary btn-lg addbutton"> Ajouter [quantity] [crypto] sur [exchange_name]</button>
+		<button type="button" onclick="CreerAsset() + SaveAsset()" class="btn btn-primary btn-lg addbutton"> ADD</button>
 
 		
 

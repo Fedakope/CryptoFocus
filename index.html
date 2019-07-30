@@ -48,9 +48,12 @@
 
 	<div class="container">
 		<div class="title"><h1>Mon Portefeuille 1</h1></div>
-		<div id="injecthere">
-			
+		<div id="injectexchangehere">
 		</div>
+		<div id="injectassethere">
+		</div>
+
+
 		<div class="exchange">
 
 			<div class="exchangename">
@@ -60,11 +63,15 @@
 			</div>
 			
 			<div>
-				<button onclick="ListAssets() + ListExchanges()" class="btn btn-primary btn-lg" type="button">Show seeds ! (console) </button>
+				<!-- <button onclick="ListAssets() + ListExchanges()" class="btn btn-primary btn-lg" type="button">Show seeds ! (console) </button> -->
 <!-- 				<button onclick="Injection()" class="btn btn-primary btn-lg" type="button">Inject exchangeList1</button>
--->				<button onclick="InjectExchange()" class="btn btn-primary btn-lg" type="button">Inject exchangeList2</button>
-<button onclick="InjectAsset()" class="btn btn-primary btn-lg" type="button">Inject assetList2</button>
+-->				<button onclick=" LoadExchange() + ToEx()" class="btn btn-primary btn-lg" type="button">Rebuilt Ex as object</button>
+<button onclick="DisplayEx()" class="btn btn-primary btn-lg" type="button">Inject Ex</button>
+<button onclick="LoadAsset() + ToAsset()" class="btn btn-primary btn-lg" type="button">Rebuilt Asset as object</button>
+<button onclick="DisplayAss()" class="btn btn-primary btn-lg" type="button">inject Asset</button>
 <button onclick="FetchPrices()" class="btn btn-primary btn-lg" type="button">Fetch prices (console)</button>
+<button onclick="DisplayBoth()" class="btn btn-primary btn-lg" type="button">Display both</button>
+<button onclick="Seeds()" class="btn btn-primary btn-lg" type="button">Make Seeds !</button>
 </div>
 
 
@@ -79,7 +86,7 @@
 		</div>
 		<div class="name">
 			<p>BTC</p>
-		</div>
+		</div>0
 		<div class="quantity">
 			<p>20 000</p>
 		</div>

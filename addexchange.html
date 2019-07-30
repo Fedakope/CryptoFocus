@@ -48,7 +48,7 @@
 
 	<div class="container">
 		<div class="title"><h1>Mon Portefeuille 1</h1></div>
-		<div class="subtitle"><h2>Choisissez un  exchange</h2></div>
+		<div class="subtitle"><h2>Choisissez un exchange</h2></div>
 
 
 		<div class="exchangecheckboxes">
@@ -64,22 +64,24 @@
 				</div>
 
 				<div>
-					<input type="radio" id="Poloniex" name="pickexchange" value="Poloniex">
-					<label for="Poloniex">Poloniex</label>
+					<input type="radio" id="poloniex" name="pickexchange" value="poloniex">
+					<label for="poloniex">Poloniex</label>
 				</div>
 				<div>
-					<input type="radio" id="Bitmex" name="pickexchange" value="Bitmex">
-					<label for="Bitmex">Bitmex</label>
+					<input type="radio" id="bitmex" name="pickexchange" value="bitmex">
+					<label for="bitmex">Bitmex</label>
 				</div>
 				<div>
-					<input type="radio" id="Bittrex" name="pickexchange" value="Bittrex">
-					<label for="Bittrex">Bittrex</label>
+					<input type="radio" id="bittrex" name="pickexchange" value="bittrex">
+					<label for="bittrex">Bittrex</label>
 				</div>
 				<div>
-					<input type="radio" id="Cryptopia" name="pickexchange" value="Cryptopia">
-					<label for="Cryptopia">Cryptopia</label>
+					<input type="radio" id="cryptopia" name="pickexchange" value="cryptopia">
+					<label for="cryptopia">Cryptopia</label>
 				</div>
 			</form>
+
+			<button onclick=" LoadExchange() + ToEx()" class="btn btn-primary btn-lg" type="button">GET DATAS </button>
 			<button type="button" onclick="CreerExchange() + SaveExchange()" id="okbutton" class="btn btn-primary btn-lg">Ajouter exchange</button>
 			
 		</div>

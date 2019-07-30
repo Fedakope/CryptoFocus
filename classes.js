@@ -36,13 +36,14 @@ function CreerExchange(name){
 // ASSETS 
 var assetList = [];
 function Asset (exchange, coin, quantity, prixeuro, prixbtc, totaleuro) {
-	this.Exchange = exchange
+	this.Exchange = exchange;
 	this.Coin = coin;
 	this.Quantity = quantity;
 	this.Prixeuro = prixeuro;
 	this.Prixbtc = prixbtc;
 	this.Totaleuro = totaleuro;
 	assetList.push(this);
+
 }
 
 function ListAssets(){
@@ -54,11 +55,12 @@ function ListAssets(){
 function CreerAsset(exchange, coin, quantity, prixeuro, prixbtc, totaleuro){
 	var coin = document.querySelector('input[name="pickcrypto"]:checked').value;
 	var qty = document.getElementById("quantity").value
+	var exchange = PathName();
 	console.log(qty);
-	new Asset("vide", coin, qty, 500, "", 6000)
+	new Asset(exchange, coin, qty, 500, "", 6000)
 	Swal.fire({
 		title: 'Confirmer ajout ?',
-		text: "Vous allez ajouter " + AddQuantity() + " " + AddAsset() + " à [exchange_name]",
+		text: "Vous allez ajouter " + AddQuantity() + " " + AddAsset() + " à exchange" + exchange,
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
@@ -89,21 +91,42 @@ function Injection() {
 // SEEDS
 
 function Seeds() {
-	var k = new Exchange("Kraken");
-	var b = new Exchange("Binance");
-	var p = new Exchange("Poloniex");
+	var k = new Exchange("kraken");
+	var b = new Exchange("binance");
+	var p = new Exchange("poloniex");
 
 
-	var asset1 = new Asset("Kraken", "btc", 5, 12000, "", 60000)
-	var asset2 = new Asset("Kraken", "xrp", 5, 24000, "", 120000)
-	var asset3 = new Asset("Kraken", "bch", 5, 6000, "", 3000)
-	var asset4 = new Asset("Kraken", "eth", 20, 300, "", 6000)
-	var asset5 = new Asset("Binance", "ada", 17000, "", 0.0045, 3000)
-	var asset6 = new Asset("Binance", "xmr", 17000, "", 0.0045, 3000)
-	var asset7 = new Asset("Binance", "dgb", 17000, "", 0.0045, 3000)
-	var asset8 = new Asset("Poloniex", "dgb", 17000, "", 0.0045, 3000)
-	var asset9 = new Asset("Poloniex", "nxt", 15, "2", "", 30)
+	var asset1 = new Asset("kraken", "btc", 5, 12000, 150, 60000);
+	var asset2 = new Asset("kraken", "xrp", 5, 24000, "", 120000);
+	var asset3 = new Asset("kraken", "bch", 5, 6000, "", 3000);
+	var asset4 = new Asset("kraken", "eth", 20, 300, "", 6000);
+	var asset5 = new Asset("binance", "ada", 17000, "", 0.0045, 3000);
+	var asset6 = new Asset("binance", "xmr", 17000, "", 0.0045, 3000);
+	var asset7 = new Asset("binance", "dgb", 17000, "", 0.0045, 3000);
+	var asset8 = new Asset("poloniex", "dgb", 17000, "", 0.0045, 3000);
+	var asset9 = new Asset("poloniex", "dgb", 17000, "", 0.0045, 3000);
+
+	console.log("Seeds done : 3 exchanges, 9 assets")
 }
+
+
+// PATH NAME 
+
+function PathName() {
+	path = window.location
+	var pathname = path.href
+	exname = pathname.split('=')[1]
+	document.getElementById("pathtestbox").innerHTML = exname
+	return exname
+	
+}
+
+
+/*function GetExName(str) {
+    return str.split('=')[1];
+}
+*/
+
 
 
 
